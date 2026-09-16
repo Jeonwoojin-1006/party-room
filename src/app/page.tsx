@@ -100,7 +100,7 @@ function CalendarContent() {
     setIsSaving(true);
 
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('reservations')
         .upsert({ date: selectedDate, status: trimmedStatus }, { onConflict: 'date' })
         .select();
@@ -213,7 +213,7 @@ function CalendarContent() {
       {/* 상단 헤더 */}
       <header className="w-full max-w-xl flex items-center justify-between py-4 border-b border-zinc-800 mb-6">
         <div className="flex items-center gap-2">
-          <h1 className="text-xl font-bold tracking-tight text-white">예약 현황</h1>
+          <h1 className="text-xl font-bold tracking-tight text-white">예약현황</h1>
           {isAdmin && (
             <span className="text-xs bg-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/40 font-semibold">
               관리자 모드
@@ -231,6 +231,14 @@ function CalendarContent() {
           >
             <ChevronLeft size={20} />
           </button>
+
+          {/* 나중에 인스타 생기면 아래 주석을 풀어서 사용
+          <div className="text-center">
+            <span className="inline-block bg-pink-500/20 text-pink-300 font-bold px-4 py-1.5 rounded-full text-base tracking-wide border border-pink-500/30">
+              {format(currentMonth, 'M월 예약현황')}
+            </span>
+          </div>
+          */}
 
           {/* 연도 & 월 선택 */}
           <div className="flex items-center gap-2">
