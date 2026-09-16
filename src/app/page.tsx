@@ -213,7 +213,7 @@ function CalendarContent() {
       {/* 상단 헤더 */}
       <header className="w-full max-w-xl flex items-center justify-between py-4 border-b border-zinc-800 mb-6">
         <div className="flex items-center gap-2">
-          <h1 className="text-xl font-bold tracking-tight text-white">PC 파티룸 예약 현황</h1>
+          <h1 className="text-xl font-bold tracking-tight text-white">예약 현황</h1>
           {isAdmin && (
             <span className="text-xs bg-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/40 font-semibold">
               관리자 모드
